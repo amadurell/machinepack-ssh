@@ -1,0 +1,31 @@
+{
+  "name": "machinepack-ssh",
+  "version": "0.1.0",
+  "description": "Use SSH to send commands to a remote server",
+  "scripts": {
+    "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
+  },
+  "keywords": [
+    "SSH",
+    "machines",
+    "machinepack"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^3.6.0",
+    "machine": "^3.0.0",
+    "node-ssh": "^0.1.2",
+    "ssh2": "^0.4.4"
+  },
+  "devDependencies": {
+    "test-machinepack-mocha": "^0.2.2"
+  },
+  "machinepack": {
+    "friendlyName": "SSH",
+    "machineDir": "machines/",
+    "machines": [
+      "run-ssh-command"
+    ]
+  }
+}
