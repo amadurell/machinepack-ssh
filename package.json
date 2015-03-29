@@ -1,6 +1,6 @@
 {
   "name": "machinepack-ssh",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Use SSH to send commands to a remote server",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
