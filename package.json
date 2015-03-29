@@ -10,16 +10,19 @@
     "machines",
     "machinepack"
   ],
-  "author": "",
+  "author": "Nile Frater",
   "license": "MIT",
   "dependencies": {
     "lodash": "^3.6.0",
     "machine": "^3.0.0",
-    "node-ssh": "^0.1.2",
     "ssh2": "^0.4.4"
   },
   "devDependencies": {
     "test-machinepack-mocha": "^0.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nilefrater/machinepack-ssh.git"
   },
   "machinepack": {
     "friendlyName": "SSH",
