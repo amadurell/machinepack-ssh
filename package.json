@@ -1,7 +1,7 @@
 {
   "name": "machinepack-ssh",
-  "version": "1.0.0",
-  "description": "Use SSH to send commands to a remote server",
+  "version": "1.0.1",
+  "description": "Use SSH to send any command to a remote server.",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
   },
@@ -25,6 +25,7 @@
     "url": "https://github.com/nilefrater/machinepack-ssh.git"
   },
   "machinepack": {
+    "iconSrc": "http://tiberius.delta9.pl/k/i/ssh-picture.jpg",
     "friendlyName": "SSH",
     "machineDir": "machines/",
     "machines": [
