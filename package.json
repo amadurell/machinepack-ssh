@@ -25,6 +25,7 @@
     "url": "https://github.com/nilefrater/machinepack-ssh.git"
   },
   "machinepack": {
+    "iconSrc": "http://tiberius.delta9.pl/k/i/ssh-picture.jpg",
     "friendlyName": "SSH",
     "machineDir": "machines/",
     "machines": [
