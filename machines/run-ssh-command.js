@@ -14,7 +14,12 @@ module.exports = {
 
      hostName: {
       example: '127.0.0.1',
-      description: 'The hostname or IP of the server you would like to SSH into.',
+      description: 'The hostname or IP of the server you would like to SSH into. Do not include the port.',
+      required: true
+    },
+    port: {
+      example: '22',
+      description: 'The port you wish to connect through on the remote server. This is usually 22 by default.',
       required: true
     },
     userName: {
@@ -70,7 +75,7 @@ module.exports = {
     });
   }).connect({
     host: inputs.hostName,
-    port: 22,
+    port: inputs.port,
     username: inputs.userName,
     password: inputs.password
   });
