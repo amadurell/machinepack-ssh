@@ -1,7 +1,7 @@
 {
   "name": "machinepack-ssh",
-  "version": "1.1.1",
-  "description": "Use SSH to send any command to a remote server.",
+  "version": "2.0.0",
+  "description": "Use SSH to send any command to a remote server with or without private keys.",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
   },
@@ -29,7 +29,8 @@
     "friendlyName": "SSH",
     "machineDir": "machines/",
     "machines": [
-      "run-ssh-command"
+      "run-ssh-command",
+      "run-ssh-command-keys"
     ]
   }
 }
