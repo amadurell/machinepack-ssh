@@ -4,7 +4,7 @@ module.exports = {
   friendlyName: 'Run SSH Command',
 
 
-  description: 'Run a command on a remote server via SSH. Requires Host, Username, Password and ommand.',
+  description: 'Run a command on a remote server via SSH. Requires Host, Username, Password and Command.',
 
 
   extendedDescription: '',
