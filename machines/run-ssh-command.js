@@ -41,15 +41,19 @@ module.exports = {
 
 
 
-  defaultExit: 'success',
+  defaultExit: 'close',
   exits: {
-    error: {
-      description: 'Unexpected error occurred.',
+    close: {
+      description: 'Connection closed.'
     },
-
-    success: {
-      description: 'Returns output from the remote server.',
-      example: 'Connection Successful.'
+    error: {
+      description: 'Unexpected error occurred.'
+    },
+    stderr: {
+      description: 'Returns stderr output from the remote server.'
+    },
+    stdout: {
+      description: 'Returns output from the remote server.'
     }
  },
 
@@ -59,6 +63,12 @@ module.exports = {
     var Client = require('ssh2').Client;
     // Debugging? Un-comment the console.log lines.
     var conn = new Client();
+    var alldata = '';
+
+    conn.on('error', function(err){
+      // console.log(`Client :: error ${err}`);
+      return exits.error(err);
+    });
 
     conn.on('ready', function() {
     // console.log('Client :: ready');
@@ -67,13 +77,23 @@ module.exports = {
       stream.on('close', function(code, signal) {
         // console.log('Stream :: close :: code: ' + code + ', signal: ' + signal);
         conn.end();
-      }).on('data', function(data) {
+        return exits.close(alldata);
+      });
+      stream.on('data', function(data) {
         // console.log('STDOUT: ' + data);
-      }).stderr.on('data', function(data) {
+        alldata += data;
+        return exits.stdout(data);
+      });
+      stream.stderr.on('data', function(data) {
         // console.log('STDERR: ' + data);
+        alldata += data;
+        return exits.stderr(data);
       });
     });
-  }).connect({
+
+  });
+
+  conn.connect({
     host: inputs.hostName,
     port: inputs.port,
     username: inputs.userName,
@@ -81,9 +101,7 @@ module.exports = {
   });
 
 
-    return exits.success();
   },
-
 
 
 };
